@@ -10,6 +10,7 @@ import me.shiunchiu.githubwebhookwithgoogleapi.model.User;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GitHubIssuePayload {
+  private String action;
   private Issue issue;
   private User sender;
 
