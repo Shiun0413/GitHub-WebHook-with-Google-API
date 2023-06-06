@@ -44,7 +44,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-sheets</artifactId>
-      <version>v4-rev612-1.25.0</version>
+      <version>v4-rev20210629-1.32.1</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/com.google.auth/google-auth-library-oauth2-http -->
@@ -65,7 +65,7 @@
     <dependency>
       <groupId>com.google.api-client</groupId>
       <artifactId>google-api-client</artifactId>
-      <version>2.2.0</version>
+      <version>1.31.1</version>
     </dependency>
 
 
