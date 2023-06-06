@@ -1,15 +1,14 @@
 package me.shiunchiu.githubwebhookwithgoogleapi.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 public class Issue {
-  private String htmlUrl;
+  private String url;
   private User assignee;
-  private String closedAt;
+  private String closed_at;
   private String title;
 
 }
