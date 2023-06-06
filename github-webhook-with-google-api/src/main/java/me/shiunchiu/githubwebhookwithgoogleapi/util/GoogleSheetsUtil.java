@@ -14,11 +14,17 @@ import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.Collections;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class GoogleSheetsUtil {
+
+  @Value("${google.service.account.key.file.path}")
+  private String SEVICE_ACCOUNT_KEY_FILE_PATH;
+
   private static final String APPLICATION_NAME = "Google Sheets Example";
   private static HttpTransport httpTransport;
-
   private static final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS);
 
   static {
@@ -29,9 +35,9 @@ public class GoogleSheetsUtil {
     }
   }
 
-  public static Sheets getSheetsService() throws IOException {
+  public Sheets getSheetsService() throws IOException {
     JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
-    GoogleCredentials credential = GoogleCredentials.fromStream(new FileInputStream("path/to/your/serviceAccountKey"))
+    GoogleCredentials credential = GoogleCredentials.fromStream(new FileInputStream(SEVICE_ACCOUNT_KEY_FILE_PATH))
         .createScoped(SCOPES);
     HttpRequestInitializer requestInitializer = new HttpCredentialsAdapter(credential);
 
